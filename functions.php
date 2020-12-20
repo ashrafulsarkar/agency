@@ -18,7 +18,6 @@ function codeagency_assets(){
     wp_enqueue_style("animate", get_theme_file_uri("/assets/vendor/animate/animate.css"));
     wp_enqueue_style("stylesheet", get_theme_file_uri("/assets/css/style.css"));
     wp_enqueue_style("skin", get_theme_file_uri("/assets/css/skin/skin-3.css"));
-    wp_enqueue_style("switcher", get_theme_file_uri("/assets/vendor/switcher/switcher.css"));
     wp_enqueue_style("rangeslider", get_theme_file_uri("/assets/vendor/rangeslider/rangeslider.css"));
     wp_enqueue_style("codeagency-css", get_stylesheet_uri());
 
@@ -36,7 +35,6 @@ function codeagency_assets(){
     wp_enqueue_script("dz.carousel",get_theme_file_uri("/assets/js/dz.carousel.js"),array("jquery"),"1.0",true);
     wp_enqueue_script("dz.ajax",get_theme_file_uri("/assets/js/dz.ajax.js"),array("jquery"),"1.0",true);
     wp_enqueue_script("custom-js",get_theme_file_uri("/assets/js/custom.js"),array("jquery"),"1.0",true);
-    wp_enqueue_script("switcher-js",get_theme_file_uri("/assets/vendor/switcher/switcher.js"),array("jquery"),"1.0",true);
     wp_enqueue_script("rangeslider-js",get_theme_file_uri("/assets/vendor/rangeslider/rangeslider.js"),array("jquery"),"1.0",true);
 }
 add_action("wp_enqueue_scripts", "codeagency_assets");

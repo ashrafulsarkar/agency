@@ -12,95 +12,24 @@
     
 	<?php wp_head();?>
 	
-	
 </head>
-<body id="bg">
+<body id="bg" <?php body_class();?>>
 <div id="loading-area" class="loading-03"></div>
 <div class="page-wraper">
 	<!-- Header -->
-	<header class="site-header mo-left header-transparent">
+	<header class="site-header mo-left header-transparent <?php if(
+is_user_logged_in()){ echo "header_admin";}?>">
 		<!-- Main Header -->
-		<div class="sticky-header main-bar-wraper navbar-expand-lg">
+		<div class="sticky-header main-bar-wraper navbar-expand-lg <?php if(
+is_user_logged_in()){ echo "header_admin";}?>">
 			<div class="main-bar clearfix ">
 				<div class="container clearfix">
 					<!-- Website Logo -->
 					<div class="logo-header">
-						<a href="index.html"><img class="logo-3" src="images/logo-white.png" alt=""></a>
+						<a href="index.html"><img class="logo-3" src="<?php echo get_theme_file_uri("/assets/images/");?>logo-white.png" alt=""></a>
 					</div>
 					<!-- Nav Toggle Button -->
-					<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
-					<!-- Extra Nav -->
-					<div class="extra-nav">
-						<div class="extra-cell">
-							<a href="contact-us-3.html" class="btn btn-corner gradient btn-primary"><i class="fa fa-angle-right m-r10"></i>Get A Quote</a> 
-						</div>
-					</div>
-					<div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
-						<div class="logo-header">
-							<a href="index.html"><img src="images/logo-3.png" alt=""></a>
-						</div>
-						<ul class="nav navbar-nav navbar">	
-							<li class="active"><a href="javascript:void(0);"><span>Home</span><i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-								<li><a href="index.html">Home 1</a></li>
-								<li><a href="index-2.html">Home 2</a></li>
-								<li><a href="index-3.html">Home 3</a></li>
-							</ul>
-							</li>
-							<li class="active"><a href="javascript:void(0);"><span>Pages</span><i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="about-us-1.html">About Us 1</a></li>
-									<li><a href="about-us-2.html">About Us 2</a></li>
-									<li><a href="about-us-3.html">About Us 3</a></li>
-									<li><a href="faq-1.html">Faq 1</a></li>
-									<li><a href="faq-2.html">Faq 2</a></li>
-									<li><a href="faq-3.html">Faq 3</a></li>
-									<li><a href="pricing-table-1.html">Pricing Table 1</a></li>
-									<li><a href="pricing-table-2.html">Pricing Table 2</a></li>
-									<li><a href="pricing-table-3.html">Pricing Table 3</a></li>
-									<li><a href="team-1.html">Team 1</a></li>
-									<li><a href="team-2.html">Team 2</a></li>
-									<li><a href="team-3.html">Team 3</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:void(0);"><span>Services</span><i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="services-1.html">Services 1</a></li>
-									<li><a href="services-2.html">Services 2</a></li>
-									<li><a href="services-3.html">Services 3</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:void(0);"><span>Blog</span><i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="blog-grid-2.html">Blog Grid 2</a></li>
-									<li><a href="blog-large-left-sidebar.html">Large Left Sidebar</a></li>
-									<li><a href="blog-large-right-sidebar.html">Large Right Sidebar</a></li>
-									<li><a href="blog-details-1.html">Blog Details 1</a></li>
-									<li><a href="blog-details-2.html">Blog Details 2</a></li>
-									<li><a href="blog-details-3.html">Blog Details 3</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:void(0);"><span>Contact Us</span><i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
-									<li><a href="contact-us-1.html">Contact Us 1</a></li>
-									<li><a href="contact-us-2.html">Contact Us 2</a></li>
-									<li><a href="contact-us-3.html">Contact Us 3</a></li>
-								</ul>
-							</li>
-						</ul>
-						<div class="dlab-social-icon">
-							<ul>
-								<li><a class="fa fa-facebook" href="javascript:void(0);"></a></li>
-								<li><a class="fa fa-twitter" href="javascript:void(0);"></a></li>
-								<li><a class="fa fa-linkedin" href="javascript:void(0);"></a></li>
-								<li><a class="fa fa-instagram" href="javascript:void(0);"></a></li>
-							</ul>
-						</div>		
-					</div>
+					<?php get_template_part("template-parts/common/navigation");?>
 				</div>
 			</div>
 		</div>
@@ -110,7 +39,7 @@
 	
 	<div class="page-content bg-white">
 		<!-- Slider -->
-		<div class="banner-three bg-primary" style="background-image: url(images/background/bg5.png), url(images/background/bg6.png), var(--gradient-sec);">
+		<div class="banner-three bg-primary" style="background-image: url(<?php echo get_theme_file_uri("/assets/images/");?>background/bg5.png), url(<?php echo get_theme_file_uri("/assets/images/");?>background/bg6.png), var(--gradient-sec);">
 			<div class="container">
 				<div class="banner-inner">
 					<div class="row align-items-center">
@@ -124,7 +53,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="dz-media wow fadeIn" data-wow-delay="1s" data-wow-duration="3s">
-								<img src="images/main-slider/slider3/pic1.png" class="move-1" alt="">
+								<img src="<?php echo get_theme_file_uri("/assets/images/");?>main-slider/slider3/pic1.png" class="move-1" alt="">
 							</div>
 						</div>
 					</div>
@@ -186,7 +115,7 @@
 				<div class="row">
 					<div class="col-lg-6 m-b30">
 						<div class="dz-media">
-							<img src="images/about/img6.png" class="move-2" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>about/img6.png" class="move-2" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -263,7 +192,7 @@
 					</div>
 					<div class="col-lg-4 wow zoomIn" data-wow-duration="2s" data-wow-delay="0.2s">
 						<div class="dz-media text-center m-b30">
-							<img src="images/about/img7.png" class="move-1" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>about/img7.png" class="move-1" alt="">
 						</div>
 					</div>
 					<div class="col-lg-4">
@@ -336,7 +265,7 @@
 						<li class="card-container col-lg-6 web_design">
 							<div class="dlab-box dlab-overlay-box style-3 m-b30">
 								<div class="dlab-media dlab-img-overlay1">
-									<img src="images/projects/project-1/pic1.jpg" alt="">
+									<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic1.jpg" alt="">
 								</div>
 								<div class="dlab-info">
 									<h5 class="title"><a href="javascript:void(0);">Software Landing Page Design</a></h5>
@@ -349,7 +278,7 @@
 								<div class="col-sm-6">
 									<div class="dlab-box dlab-overlay-box style-3 m-b30">
 										<div class="dlab-media dlab-img-overlay1">
-											<img src="images/projects/project-1/pic2.jpg" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic2.jpg" alt="">
 										</div>
 										<div class="dlab-info">
 											<h5 class="title"><a href="javascript:void(0);">Software </a></h5>
@@ -360,7 +289,7 @@
 								<div class="col-sm-6">
 									<div class="dlab-box dlab-overlay-box style-3 m-b30">
 										<div class="dlab-media dlab-img-overlay1">
-											<img src="images/projects/project-1/pic3.jpg" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic3.jpg" alt="">
 										</div>
 										<div class="dlab-info">
 											<h5 class="title"><a href="javascript:void(0);">Software</a></h5>
@@ -373,7 +302,7 @@
 						<li class="card-container col-lg-6 web_development web_design">
 							<div class="dlab-box dlab-overlay-box style-3 m-b30">
 								<div class="dlab-media dlab-img-overlay1">
-									<img src="images/projects/project-1/pic6.jpg" alt="">
+									<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic6.jpg" alt="">
 								</div>
 								<div class="dlab-info">
 									<h5 class="title"><a href="javascript:void(0);">Software Landing Page Design</a></h5>
@@ -386,7 +315,7 @@
 								<div class="col-sm-6">
 									<div class="dlab-box dlab-overlay-box style-3 m-b30">
 										<div class="dlab-media dlab-img-overlay1">
-											<img src="images/projects/project-1/pic4.jpg" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic4.jpg" alt="">
 										</div>
 										<div class="dlab-info">
 											<h5 class="title"><a href="javascript:void(0);">Software </a></h5>
@@ -397,7 +326,7 @@
 								<div class="col-sm-6">
 									<div class="dlab-box dlab-overlay-box style-3 m-b30">
 										<div class="dlab-media dlab-img-overlay1">
-											<img src="images/projects/project-1/pic5.jpg" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>projects/project-1/pic5.jpg" alt="">
 										</div>
 										<div class="dlab-info">
 											<h5 class="title"><a href="javascript:void(0);">Software</a></h5>
@@ -413,7 +342,7 @@
 		</section>
 		
 		<!-- Newsletter -->
-		<section class="content-inner-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s" style="background-image: url(images/background/bg12.png), var(--gradient-sec); background-size: cover, 200%; background-repeat: no-repeat;">
+		<section class="content-inner-3 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s" style="background-image: url(<?php echo get_theme_file_uri("/assets/images/");?>background/bg12.png), var(--gradient-sec); background-size: cover, 200%; background-repeat: no-repeat;">
 			<div class="container">
 				<div class="row align-items-center subscribe-wraper-1">
 					<div class="col-lg-7 col-md-6">
@@ -451,7 +380,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.1s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic1.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic1.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -464,7 +393,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic2.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic2.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -477,7 +406,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic3.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic3.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -490,7 +419,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic4.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic4.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -503,7 +432,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic1.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic1.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -516,7 +445,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic2.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic2.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -529,7 +458,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.7s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic3.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic3.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -542,7 +471,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.8s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic4.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic4.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -555,7 +484,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic1.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic1.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -568,7 +497,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.0s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic2.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic2.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -581,7 +510,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.1s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic3.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic3.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -594,7 +523,7 @@
 							<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.2s">
 								<div class="dlab-team style-2 m-b10">
 									<div class="dlab-media">
-										<a href="javascript:void(0);"><img src="images/team/small/pic4.jpg" alt=""></a>
+										<a href="javascript:void(0);"><img src="<?php echo get_theme_file_uri("/assets/images/");?>team/small/pic4.jpg" alt=""></a>
 									</div>
 									<div class="dlab-content">
 										<div class="clearfix">
@@ -627,7 +556,7 @@
 											<h3>Basic Plan</h3>
 										</div>
 										<div class="icon-cell">
-											<img src="images/pricingtable/icon1.png" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>pricingtable/icon1.png" alt="">
 										</div>
 									</div>
 									<div class="pricingtable-price"> 
@@ -655,7 +584,7 @@
 											<h3>Standart Plan</h3>
 										</div>
 										<div class="icon-cell">
-											<img src="images/pricingtable/icon2.png" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>pricingtable/icon2.png" alt="">
 										</div>
 									</div>
 									<div class="pricingtable-price"> 
@@ -683,7 +612,7 @@
 											<h3>Premium Plan</h3>
 										</div>
 										<div class="icon-cell">
-											<img src="images/pricingtable/icon3.png" alt="">
+											<img src="<?php echo get_theme_file_uri("/assets/images/");?>pricingtable/icon3.png" alt="">
 										</div>
 									</div>
 									<div class="pricingtable-price"> 
@@ -709,7 +638,7 @@
 		</section>
 		
 		<!-- Testimonials -->
-		<section class="content-inner-1 bg-gray" style="background-image: url(images/background/bg3.png);">
+		<section class="content-inner-1 bg-gray" style="background-image: url(<?php echo get_theme_file_uri("/assets/images/");?>background/bg3.png);">
 			<div class="container">
 				<div class="section-head style-3 text-center">
 					<h2 class="title m-t10">What Our Clients Say’s</h2>
@@ -719,7 +648,7 @@
 					<div class="item">
 						<div class="testimonial-2">
 							<div class="testimonial-pic quote-right">
-								<img src="images/testimonials/pic1.jpg" alt="">
+								<img src="<?php echo get_theme_file_uri("/assets/images/");?>testimonials/pic1.jpg" alt="">
 							</div>
 							<div class="testimonial-text">
 								<p>Nullam et velit mollis, dictum eros a, vehicula turpis. Aenean feugiat congue faucibus. Nullam dapibus ex ex, vulputate gravida nisi mattis in. Duis maximus odio sed turpis vehicula auctor sit amet ut urna. Nam non libero ut ex fermentum consectetur et in dolor. Morbi tempor gravida diam nec lacinia. Suspendisse vehicula ultricies arcu.</p>
@@ -730,7 +659,7 @@
 					<div class="item">
 						<div class="testimonial-2">
 							<div class="testimonial-pic quote-right">
-								<img src="images/testimonials/pic3.jpg" alt="">
+								<img src="<?php echo get_theme_file_uri("/assets/images/");?>testimonials/pic3.jpg" alt="">
 							</div>
 							<div class="testimonial-text">
 								<p>Nullam et velit mollis, dictum eros a, vehicula turpis. Aenean feugiat congue faucibus. Nullam dapibus ex ex, vulputate gravida nisi mattis in. Duis maximus odio sed turpis vehicula auctor sit amet ut urna. Nam non libero ut ex fermentum consectetur et in dolor. Morbi tempor gravida diam nec lacinia. Suspendisse vehicula ultricies arcu.</p>
@@ -741,7 +670,7 @@
 					<div class="item">
 						<div class="testimonial-2">
 							<div class="testimonial-pic quote-right">
-								<img src="images/testimonials/pic3.jpg" alt="">
+								<img src="<?php echo get_theme_file_uri("/assets/images/");?>testimonials/pic3.jpg" alt="">
 							</div>
 							<div class="testimonial-text">
 								<p>Nullam et velit mollis, dictum eros a, vehicula turpis. Aenean feugiat congue faucibus. Nullam dapibus ex ex, vulputate gravida nisi mattis in. Duis maximus odio sed turpis vehicula auctor sit amet ut urna. Nam non libero ut ex fermentum consectetur et in dolor. Morbi tempor gravida diam nec lacinia. Suspendisse vehicula ultricies arcu.</p>
@@ -764,7 +693,7 @@
 					<div class="col-xl-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
 						<div class="dlab-blog blog-half m-b30">
 							<div class="dlab-media">
-								<a href="blog-details-3.html"><img src="images/blog/default/thum1.jpg" alt=""></a>
+								<a href="blog-details-3.html"><img src="<?php echo get_theme_file_uri("/assets/images/");?>blog/default/thum1.jpg" alt=""></a>
 							</div>
 							<div class="dlab-info">
 								<h5 class="dlab-title">
@@ -790,7 +719,7 @@
 					<div class="col-xl-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.4s">
 						<div class="dlab-blog blog-half m-b30">
 							<div class="dlab-media">
-								<a href="blog-details-3.html"><img src="images/blog/default/thum2.jpg" alt=""></a>
+								<a href="blog-details-3.html"><img src="<?php echo get_theme_file_uri("/assets/images/");?>blog/default/thum2.jpg" alt=""></a>
 							</div>
 							<div class="dlab-info">
 								<h5 class="dlab-title">
@@ -816,7 +745,7 @@
 					<div class="col-xl-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
 						<div class="dlab-blog blog-half m-b30">
 							<div class="dlab-media">
-								<a href="blog-details-3.html"><img src="images/blog/default/thum3.jpg" alt=""></a>
+								<a href="blog-details-3.html"><img src="<?php echo get_theme_file_uri("/assets/images/");?>blog/default/thum3.jpg" alt=""></a>
 							</div>
 							<div class="dlab-info">
 								<h5 class="dlab-title">
@@ -842,7 +771,7 @@
 					<div class="col-xl-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.8s">
 						<div class="dlab-blog blog-half m-b30">
 							<div class="dlab-media">
-								<a href="blog-details-3.html"><img src="images/blog/default/thum4.jpg" alt=""></a>
+								<a href="blog-details-3.html"><img src="<?php echo get_theme_file_uri("/assets/images/");?>blog/default/thum4.jpg" alt=""></a>
 							</div>
 							<div class="dlab-info">
 								<h5 class="dlab-title">
@@ -875,32 +804,32 @@
 				<div class="clients-carousel owl-none owl-carousel">
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo1.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo1.png" alt="">
 						</div>
 					</div>
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo2.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo2.png" alt="">
 						</div>
 					</div>
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo3.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo3.png" alt="">
 						</div>
 					</div>
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo4.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo4.png" alt="">
 						</div>
 					</div>
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo5.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo5.png" alt="">
 						</div>
 					</div>
 					<div class="item">
 						<div class="clients-logo">
-							<img src="images/logo/logo6.png" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>logo/logo6.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -913,7 +842,7 @@
 				<div class="row align-items-center">
 					<div class="col-lg-6 m-b30 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.2s">
 						<div class="dlab-media">
-							<img src="images/about/img8.png" class="move-1" alt="">
+							<img src="<?php echo get_theme_file_uri("/assets/images/");?>about/img8.png" class="move-1" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6 m-b30 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s">
@@ -971,14 +900,14 @@
 	</div>
 		
 	<!-- Footer -->
-    <footer class="site-footer style-3" id="footer" style="background-image: url(images/background/bg11.png), var(--gradient-sec); background-size: cover, 200%; ">
+    <footer class="site-footer style-3" id="footer" style="background-image: url(<?php echo get_theme_file_uri("/assets/images/");?>background/bg11.png), var(--gradient-sec); background-size: cover, 200%; ">
 		<div class="footer-top">
             <div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-12 col-md-4 col-sm-6 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
                         <div class="widget widget_about">
 							<div class="footer-logo">
-								<a href="index.html"><img src="images/logo-white.png" alt=""/></a> 
+								<a href="index.html"><img src="<?php echo get_theme_file_uri("/assets/images/");?>logo-white.png" alt=""/></a> 
 							</div>
 							<p>Maecenas pellentesque placerat quam, in finibus nisl tincidunt sed. Aliquam magna augue, malesuada ut feugiat eget, cursus eget felis.</p>
 							<div class="dlab-social-icon">

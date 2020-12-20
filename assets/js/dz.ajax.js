@@ -15,22 +15,22 @@ File : dz.ajax.js
 function contactForm()
 {
 	window.verifyRecaptchaCallback = function (response) {
-        $('input[data-recaptcha]').val(response).trigger('change');
+        jQuery('input[data-recaptcha]').val(response).trigger('change');
     }
 
     window.expiredRecaptchaCallback = function () {
-        $('input[data-recaptcha]').val("").trigger('change');
+        jQuery('input[data-recaptcha]').val("").trigger('change');
     }
 	'use strict';
 	var msgDiv;
-	$(".dzForm").submit(function(e)
+	jQuery(".dzForm").submit(function(e)
 	{
 		e.preventDefault();	//STOP default action
-		$('.dzFormMsg').html('<div class="gen alert alert-success">Submiting..</div>');
-		var dzFormAction = $(this).attr('action');
-		var dzFormData = $(this).serialize();
+		jQuery('.dzFormMsg').html('<div class="gen alert alert-success">Submiting..</div>');
+		var dzFormAction = jQuery(this).attr('action');
+		var dzFormData = jQuery(this).serialize();
 		
-		$.ajax({
+		jQuery.ajax({
 			method: "POST",
 			url: dzFormAction,
 			data: dzFormData,
@@ -43,8 +43,8 @@ function contactForm()
 				if(dzRes.status == 0){
 					msgDiv = '<div class="err alert alert-danger">'+dzRes.msg+'</div>';
 				}
-				$('.dzFormMsg').html(msgDiv);
-				$('.dzForm')[0].reset();
+				jQuery('.dzFormMsg').html(msgDiv);
+				jQuery('.dzForm')[0].reset();
                 grecaptcha.reset();
 			}
 		})
@@ -52,18 +52,18 @@ function contactForm()
 	
 	
 	setInterval(function(){
-		$('.dzFormMsg .alert').hide(1000);
+		jQuery('.dzFormMsg .alert').hide(1000);
 	}, 10000);
 	
 	
 	/* This function is for mail champ subscription START*/
 	
-	$(".dzSubscribe").submit(function(e)
+	jQuery(".dzSubscribe").submit(function(e)
 	{
 		e.preventDefault();	//STOP default action
-		var dzFormAction = $(this).attr('action');
-		var dzFormData = $(this).serialize();
-		$.ajax({
+		var dzFormAction = jQuery(this).attr('action');
+		var dzFormData = jQuery(this).serialize();
+		jQuery.ajax({
 			method: "POST",
 			url: dzFormAction,
 			data: dzFormData,
@@ -75,14 +75,14 @@ function contactForm()
 			if(dzRes.status == 0){
 				msgDiv = '<p style="color: #EA4335">'+dzRes.msg+'</p>';
 			}
-			$('.dzSubscribeMsg').html(msgDiv);
-			$('.dzSubscribe')[0].reset();
+			jQuery('.dzSubscribeMsg').html(msgDiv);
+			jQuery('.dzSubscribe')[0].reset();
 		  }
 		})
 	});
 	
 	setInterval(function(){
-		$('.dzSubscribeMsg p').hide(1000);
+		jQuery('.dzSubscribeMsg p').hide(1000);
 	}, 5000);
 	
 	/* This function is for mail champ subscription END*/
@@ -131,7 +131,7 @@ function init_map() {
 }
 
 
-if($("#gmap_canvas").length > 1) {
+if(jQuery("#gmap_canvas").length > 1) {
 	google.maps.event.addDomListener(window, 'load', init_map);
 }
 
